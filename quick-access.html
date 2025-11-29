@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Access - SOC RSS Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        h1 {
+            color: #4fc3f7;
+        }
+        .link-section {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .link-section h2 {
+            color: #81c784;
+            margin-top: 0;
+        }
+        a {
+            display: block;
+            color: #4fc3f7;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            background: #333;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        a:hover {
+            background: #444;
+            text-decoration: underline;
+        }
+        .note {
+            background: #3a3a3a;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 SOC RSS Feed - Quick Access</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> Make sure the React dev server is running with <code>npm run dev</code>
+    </div>
+
+    <div class="link-section">
+        <h2>Frontend (React App)</h2>
+        <a href="http://localhost:3000" target="_blank">http://localhost:3000 (Local)</a>
+        <a href="http://10.10.1.41:3000" target="_blank">http://10.10.1.41:3000 (Network)</a>
+        <a href="http://10.10.1.35:3000" target="_blank">http://10.10.1.35:3000 (Network)</a>
+    </div>
+
+    <div class="link-section">
+        <h2>Backend API</h2>
+        <a href="http://localhost:3003/api/feeds" target="_blank">http://localhost:3003/api/feeds</a>
+        <a href="http://localhost:3003/api/status" target="_blank">http://localhost:3003/api/status</a>
+    </div>
+
+    <div class="link-section">
+        <h2>Alternative IPs</h2>
+        <a href="http://100.100.133.6:3000" target="_blank">http://100.100.133.6:3000</a>
+        <a href="http://172.19.224.1:3000" target="_blank">http://172.19.224.1:3000</a>
+    </div>
+
+    <div class="note">
+        <strong>Tip:</strong> If a link doesn't work, try the other IP addresses. The correct one depends on your network configuration.
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+{
+  "apiUrl": "/api",
+  "feeds": [
+    {
+      "name": "ACSC Advisories",
+      "url": "https://www.cyber.gov.au/rss/advisories",
+      "icon": "https://www.cyber.gov.au/themes/custom/cyber/favicon.ico"
+    },
+    {
+      "name": "ACSC Alerts",
+      "url": "https://www.cyber.gov.au/rss/alerts",
+      "icon": "https://www.cyber.gov.au/themes/custom/cyber/favicon.ico"
+    },
+    {
+      "name": "Unit 42 Threat Research",
+      "url": "https://unit42.paloaltonetworks.com/feed/",
+      "icon": "https://unit42.paloaltonetworks.com/wp-content/uploads/2019/11/cropped-unit42-favicon-32x32.png"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://feeds.feedburner.com/TheHackersNews",
+      "icon": "https://thehackernews.com/images/favicon.ico"
+    },
+    {
+      "name": "Krebs on Security",
+      "url": "https://krebsonsecurity.com/feed/",
+      "icon": "https://krebsonsecurity.com/favicon.ico"
+    },
+    {
+      "name": "Bleeping Computer",
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "icon": "https://www.bleepingcomputer.com/favicon.ico"
+    },
+    {
+      "name": "Dark Reading",
+      "url": "https://www.darkreading.com/rss_simple.asp",
+      "icon": "https://www.darkreading.com/favicon.ico"
+    }
+  ],
+  "refreshInterval": 900000,
+  "scrollSpeed": 30,
+  "showDebugFooter": true,
+  "version": "0.5.0",
+  "highlightKeywords": [
+    "critical vulnerability",
+    "BAE",
+    "Australia",
+    "Remote Code Execution"
+  ],
+  "maxItemsPerFeed": 5
+}

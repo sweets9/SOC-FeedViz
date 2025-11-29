@@ -1,0 +1,33 @@
+{
+  "name": "soc-feedviz",
+  "version": "0.5.0",
+  "description": "SOC-FeedViz - Real-time cybersecurity RSS feed visualization dashboard",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "vite",
+    "start:all": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.24",
+    "gsap": "^3.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scroll": "^1.9.3",
+    "smoothscroll-polyfill": "^0.4.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "concurrently": "^8.2.2",
+    "vite": "^5.0.0"
+  },
+  "exports": {
+    "./shared/*": "./shared/*"
+  }
+}

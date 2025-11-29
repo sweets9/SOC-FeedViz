@@ -25,10 +25,14 @@ A real-time cybersecurity RSS feed visualization dashboard designed for security
 - **Real-time statistics**: Feed health, performance metrics, and image fallback tracking
 - **Live controls**: Adjust scroll speed, pause, and refresh feeds on demand
 
-## 🎬 Demo Video
+## 🎬 Demo Video & Screenshots
 
 See SOC-FeedViz in action with real-time cybersecurity feed visualization:
 
+### 📸 Main Dashboard
+![SOC-FeedViz Dashboard](demo/Demo.png)
+
+### 🎥 Live Demo Video
 [![SOC-FeedViz Demo](demo/demo_v0.5.mp4)](demo/demo_v0.5.mp4)
 
 *Click the video above to see the live demonstration of SOC-FeedViz v0.5.0*

@@ -33,7 +33,7 @@ See SOC-FeedViz in action with real-time cybersecurity feed visualization:
 ![SOC-FeedViz Dashboard](demo/Demo.png)
 
 ### 🎥 Live Demo Video
-[![SOC-FeedViz Demo](demo/demo_v0.5.mp4)](demo/demo_v0.5.mp4)
+[![SOC-FeedViz Demo](demo/Demo.png)](demo/demo_v0.5.mp4)
 
 *Click the video above to see the live demonstration of SOC-FeedViz v0.5.0*
 

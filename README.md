@@ -1,32 +1,29 @@
 # SOC-FeedViz
 
-A real-time cybersecurity RSS feed visualization dashboard with automatic scrolling, intelligent image fallbacks, and configurable monitoring capabilities.
+A real-time cybersecurity RSS feed visualization dashboard designed for security operations centers. This MVP++ product provides live threat intelligence monitoring with automatic scrolling and intelligent image fallbacks.
 
-## Features
+## ⚠️ Important Notice
 
-### 🚀 Real-time Feed Processing
+**This software is provided "as is" for demonstration and deployment in environments with appropriate security controls.** While ongoing development continues, the current version is production-ready and actively used in environments with complementary security measures.
+
+## 🚀 Core Features
+
+### Real-time Intelligence
 - **Multi-source aggregation**: Pulls from major cybersecurity feeds (ACSC, Krebs, Unit 42, etc.)
 - **Automatic refresh**: Configurable intervals with live updates
 - **Backend caching**: Optimized performance with intelligent caching
 - **Connection monitoring**: Tracks feed availability and performance
 
-### 🎨 Smart Visualization
+### Smart Visualization
 - **Auto-scrolling**: Continuous and spotlight modes with adjustable speed
 - **Image fallbacks**: Domain-specific branded images with intelligent fallback chain
 - **Responsive design**: Adapts to different screen sizes and orientations
 - **Dark/Light themes**: Customizable color schemes
 
-### 🔧 Advanced Configuration
-- **Backend-configured**: Centralized configuration via API
-- **Domain overrides**: Custom fallback images for specific domains
-- **Feed management**: Easy addition/removal of RSS sources
-- **Debug capabilities**: Comprehensive monitoring and statistics
-
-### 🌐 Deployment Ready
-- **Nginx support**: Load balancer configuration included
-- **Environment configs**: Separate development and production settings
-- **Docker compatible**: Containerized deployment options
-- **Health monitoring**: Built-in status endpoints
+### Monitoring & Debug
+- **Debug menu**: Accessible via bottom-left corner toggle
+- **Real-time statistics**: Feed health, performance metrics, and image fallback tracking
+- **Live controls**: Adjust scroll speed, pause, and refresh feeds on demand
 
 ## Quick Start
 
@@ -63,7 +60,7 @@ A real-time cybersecurity RSS feed visualization dashboard with automatic scroll
 4. **Access the dashboard**
    - Main application: http://localhost:3005
    - Backend API: http://localhost:3003/api/feeds
-   - Debug menu: Press 'D' key to toggle
+   - Debug menu: Click the toggle in the bottom-left corner
 
 ## Configuration
 
@@ -104,59 +101,60 @@ Adjust scrolling and refresh behavior:
 }
 ```
 
-## Architecture
+## 🗺️ Planned Features
 
-### Frontend (React + Vite)
-- **React 18**: Modern component-based UI
-- **GSAP**: Smooth scrolling animations
-- **Tailwind CSS**: Responsive styling
-- **Vite**: Fast development and building
+### Security & Authentication
+- **SSO Integration**: Single sign-on compatibility
+- **IP Whitelisting**: Network-based access controls
+- **Authentication**: User management and login systems
+- **API Lockdown**: Token-based API access (post-SSO)
 
-### Backend (Node.js + Express)
-- **Express.js**: RESTful API server
-- **Feed Extractor**: RSS parsing and processing
-- **File System**: Local caching and storage
-- **CORS**: Cross-origin resource sharing
+### User Experience
+- **Web Admin UI**: Administrative interface for configuration
+- **Remote Display**: Detailed news article viewing
+- **Highlight System**: Custom keyword highlighting
+- **Multiple Layouts**: Different display modes and arrangements
 
-### Shared API
-- **Centralized endpoints**: Consistent API definitions
-- **Type safety**: Structured request/response handling
-- **Error handling**: Comprehensive error management
+### Security Hardening
+- **Package Reduction**: Minimize npm dependencies for attack surface reduction
+- **Security Code Review**: Comprehensive security audit and remediation
+- **API Tokenization**: Secure API access controls
 
-## Deployment
+## 📋 Technical Documentation
 
-### Development
+For detailed architecture, API documentation, and development guidelines, see **[TECHNICAL.md](TECHNICAL.md)**.
+
+## 🚀 Deployment
+
+### Quick Deployment
 ```bash
+# Development
 npm run dev
-```
 
-### Production Build
-```bash
+# Production build
 npm run build
 npm run preview
 ```
 
-### Nginx Load Balancer
+### Production Setup
 ```bash
-# Copy nginx configuration
+# Nginx configuration
 sudo cp nginx.example.conf /etc/nginx/sites-available/soc-feedviz
-
-# Enable and restart
 sudo ln -s /etc/nginx/sites-available/soc-feedviz /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl restart nginx
 ```
 
-### Environment Variables
+### Environment Configuration
 Create `.env.production`:
 ```
 VITE_BACKEND_URL=/api
 VITE_ENV=production
 ```
 
-## Monitoring
+## 🔧 Monitoring
 
 ### Debug Menu
-Press 'D' to access real-time monitoring:
+Access real-time monitoring via the **bottom-left corner toggle**:
 - **Feed status**: Connection health and item counts
 - **Performance**: Memory usage and processing stats
 - **Image fallbacks**: Domain mapping usage and statistics
@@ -167,66 +165,32 @@ Press 'D' to access real-time monitoring:
 - `GET /api/status` - System health and statistics
 - `POST /api/refresh` - Trigger manual feed refresh
 
-## Customization
+## 🤝 Contributing
 
-### Adding New Feeds
-1. Update `config.json` with feed details
-2. Restart backend to load new configuration
-3. Frontend will automatically pick up changes
+We appreciate any contributions to SOC-FeedViz! This is an active project with ongoing development.
 
-### Custom Domain Images
-1. Add domain mapping to `config.json`
-2. Backend serves configuration to frontend
-3. Images automatically used as overrides
-
-### Theme Customization
-Modify CSS variables in `styles.css`:
-```css
-:root {
-  --primary-color: #4fc3f7;
-  --background-color: #0a0a0a;
-  --text-color: #ffffff;
-}
-```
-
-## Troubleshooting
-
-### Common Issues
-
-**Feeds not loading**
-- Check backend logs for connection errors
-- Verify RSS URLs are accessible
-- Check network connectivity and firewalls
-
-**Images not displaying**
-- Verify image URLs are accessible
-- Check CORS headers on backend
-- Review image fallback statistics in debug menu
-
-**Scrolling not working**
-- Ensure GSAP library loaded properly
-- Check for JavaScript errors in console
-- Verify auto-scroll is enabled in debug menu
-
-### Performance Optimization
-- Enable backend caching for large feed sets
-- Adjust refresh intervals based on needs
-- Use nginx for production deployments
-- Monitor memory usage in debug menu
-
-## Contributing
-
+### How to Contribute
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-## License
+### Areas for Contribution
+- **Security**: Code review, vulnerability assessment
+- **Features**: UI improvements, new feed sources
+- **Documentation**: Guides, examples, API docs
+- **Testing**: Unit tests, integration tests
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## ⚠️ Security Notice
 
-## Support
+This software is provided **"as is"** without warranty. It is designed for deployment in environments with appropriate security controls. Users should conduct their own security assessment before deployment in production environments.
+
+## 📄 License
+
+This project is licensed under the **AGPL-3.0 License** - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Support
 
 For technical support and questions:
 - Create an issue in the repository
@@ -235,4 +199,4 @@ For technical support and questions:
 
 ---
 
-**SOC-FeedViz** - Real-time cybersecurity intelligence visualization
+**SOC-FeedViz** - Real-time cybersecurity intelligence visualization | MVP++

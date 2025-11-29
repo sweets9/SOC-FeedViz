@@ -1,10 +1,10 @@
 # SOC-FeedViz
 
-A real-time cybersecurity RSS feed visualization dashboard designed for security operations centers. This MVP++ product provides live threat intelligence monitoring with automatic scrolling and intelligent image fallbacks.
+Real-time cybersecurity RSS feed dashboard for security operations centers. Live threat intelligence monitoring with auto-scrolling and intelligent image fallbacks.
 
-## ⚠️ Important Notice
+## ⚠️ Notice
 
-**This software is provided "as is" for demonstration and deployment in environments with appropriate security controls.** While ongoing development continues, the current version is production-ready and actively used in environments with complementary security measures.
+**Provided "as is"** for environments with appropriate security controls. Production-ready with ongoing development.
 
 ## 🚀 Core Features
 
@@ -25,189 +25,75 @@ A real-time cybersecurity RSS feed visualization dashboard designed for security
 - **Real-time statistics**: Feed health, performance metrics, and image fallback tracking
 - **Live controls**: Adjust scroll speed, pause, and refresh feeds on demand
 
-## 🎬 Demo Video & Screenshots
+## 🎬 Demo
 
-See SOC-FeedViz in action with real-time cybersecurity feed visualization:
-
-### 📸 Main Dashboard
 ![SOC-FeedViz Dashboard](demo/Demo.png)
 
-### 🎥 Live Demo Video
-[![SOC-FeedViz Demo](demo/Demo.png)](demo/demo_v0.5.mp4)
-
-*Click the video above to see the live demonstration of SOC-FeedViz v0.5.0*
+[▶️ Watch Demo Video](demo/demo_v0.5.mp4)
 
 ## Quick Start
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-- Git
+```bash
+git clone https://github.com/sweets9/SOC-FeedViz.git
+cd SOC-FeedViz
+npm install
+cd backend && npm install && cd ..
+npm run start:all
+```
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd SOC-FeedViz
-   ```
-
-2. **Install dependencies**
-   ```bash
-   # Install both frontend and backend dependencies
-   npm install
-   cd backend && npm install && cd ..
-   ```
-
-3. **Start the application**
-   ```bash
-   # Start both frontend and backend
-   npm run start:all
-   
-   # Or start individually
-   npm run start:frontend  # Frontend on port 3005
-   npm run start:backend   # Backend on port 3003
-   ```
-
-4. **Access the dashboard**
-   - Main application: http://localhost:3005
-   - Backend API: http://localhost:3003/api/feeds
-   - Debug menu: Click the toggle in the bottom-left corner
+**Access**: http://localhost:3005 | **API**: http://localhost:3003/api/feeds
 
 ## Configuration
 
-### Feed Sources
-Edit `config.json` to customize RSS feeds:
+Edit `config.json` for feeds, image fallbacks, and display settings:
 
 ```json
 {
-  "feeds": [
-    {
-      "name": "ACSC Advisories",
-      "url": "https://www.cyber.gov.au/rss/advisories",
-      "icon": "https://www.cyber.gov.au/themes/custom/cyber/favicon.ico"
-    }
-  ]
-}
-```
-
-### Image Fallbacks
-Configure domain-specific fallback images:
-
-```json
-{
-  "imageFallbacks": {
-    "cyber.gov.au": "https://pbs.twimg.com/profile_images/1728904475790995456/nKGMT8Q4_400x400.jpg"
-  }
-}
-```
-
-### Display Settings
-Adjust scrolling and refresh behavior:
-
-```json
-{
+  "feeds": [...],
+  "imageFallbacks": {"domain": "image_url"},
   "refreshInterval": 900000,
-  "scrollSpeed": 30,
-  "showDebugFooter": true
+  "scrollSpeed": 30
 }
 ```
 
 ## 🗺️ Planned Features
 
-### Security & Authentication
-- **SSO Integration**: Single sign-on compatibility
-- **IP Whitelisting**: Network-based access controls
-- **Authentication**: User management and login systems
-- **API Lockdown**: Token-based API access (post-SSO)
+**Security**: SSO, IP whitelisting, authentication, API lockdown  
+**Features**: Web admin UI, remote display, highlighting, multiple layouts  
+**Hardening**: Package reduction, security code review, API tokenization
 
-### User Experience
-- **Web Admin UI**: Administrative interface for configuration
-- **Remote Display**: Detailed news article viewing
-- **Highlight System**: Custom keyword highlighting
-- **Multiple Layouts**: Different display modes and arrangements
+## 📋 Documentation
 
-### Security Hardening
-- **Package Reduction**: Minimize npm dependencies for attack surface reduction
-- **Security Code Review**: Comprehensive security audit and remediation
-- **API Tokenization**: Secure API access controls
-
-## 📋 Technical Documentation
-
-For detailed architecture, API documentation, and development guidelines, see **[TECHNICAL.md](TECHNICAL.md)**.
+**Technical docs**: [TECHNICAL.md](TECHNICAL.md) - Architecture, API, development
 
 ## 🚀 Deployment
 
-### Quick Deployment
 ```bash
-# Development
-npm run dev
-
-# Production build
-npm run build
-npm run preview
+npm run dev          # Development
+npm run build        # Production build
+npm run preview      # Preview build
 ```
 
-### Production Setup
-```bash
-# Nginx configuration
-sudo cp nginx.example.conf /etc/nginx/sites-available/soc-feedviz
-sudo ln -s /etc/nginx/sites-available/soc-feedviz /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl restart nginx
-```
-
-### Environment Configuration
-Create `.env.production`:
-```
-VITE_BACKEND_URL=/api
-VITE_ENV=production
-```
+**Production**: Use nginx.example.conf for reverse proxy setup
 
 ## 🔧 Monitoring
 
-### Debug Menu
-Access real-time monitoring via the **bottom-left corner toggle**:
-- **Feed status**: Connection health and item counts
-- **Performance**: Memory usage and processing stats
-- **Image fallbacks**: Domain mapping usage and statistics
-- **Auto-scroll controls**: Speed and mode adjustments
-
-### API Endpoints
-- `GET /api/feeds` - Fetch current feed items
-- `GET /api/status` - System health and statistics
-- `POST /api/refresh` - Trigger manual feed refresh
+**Debug menu**: Bottom-left corner toggle  
+**API**: `/api/feeds`, `/api/status`, `/api/refresh`
 
 ## 🤝 Contributing
 
-We appreciate any contributions to SOC-FeedViz! This is an active project with ongoing development.
+1. Fork → 2. Feature branch → 3. Commit → 4. Push → 5. Pull request
 
-### How to Contribute
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-### Areas for Contribution
-- **Security**: Code review, vulnerability assessment
-- **Features**: UI improvements, new feed sources
-- **Documentation**: Guides, examples, API docs
-- **Testing**: Unit tests, integration tests
+**Areas**: Security, features, documentation, testing
 
 ## ⚠️ Security Notice
 
-This software is provided **"as is"** without warranty. It is designed for deployment in environments with appropriate security controls. Users should conduct their own security assessment before deployment in production environments.
+**"As is" software** - Deploy with appropriate security controls. Conduct security assessment for production use.
 
 ## 📄 License
 
-This project is licensed under the **AGPL-3.0 License** - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-For technical support and questions:
-- Create an issue in the repository
-- Check the debug menu for real-time diagnostics
-- Review logs for backend and frontend errors
+**AGPL-3.0** - See [LICENSE](LICENSE) file
 
 ---
 

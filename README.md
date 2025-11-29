@@ -8,11 +8,11 @@ Real-time cybersecurity RSS feed dashboard for security operations centers. Live
 
 ## 🚀 Core Features
 
-### Real-time Intelligence
+### Feed Processing & Visualization
 - **Multi-source aggregation**: Pulls from major cybersecurity feeds (ACSC, Krebs, Unit 42, etc.)
-- **Automatic refresh**: Configurable intervals with live updates
-- **Backend caching**: Optimized performance with intelligent caching
-- **Connection monitoring**: Tracks feed availability and performance
+- **Image extraction**: Intelligent parsing and fallback system for article images
+- **Text processing**: Clean content extraction for modern display
+- **Fluid interface**: Smooth animations and responsive design for optimal viewing
 
 ### Smart Visualization
 - **Auto-scrolling**: Continuous and spotlight modes with adjustable speed
@@ -26,8 +26,6 @@ Real-time cybersecurity RSS feed dashboard for security operations centers. Live
 - **Live controls**: Adjust scroll speed, pause, and refresh feeds on demand
 
 ## 🎬 Demo
-
-![SOC-FeedViz Dashboard](demo/Demo.png)
 
 [▶️ Watch Demo Video](demo/demo_v0.5.mp4)
 
